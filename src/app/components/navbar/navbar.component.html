@@ -1,0 +1,39 @@
+<div class="wrapper">
+<md-toolbar class="company">
+    <span class="logo" routerLink="/">Awesome</span> 
+    <a *ngIf="true" class="menu" routerLink="/about">
+      <span>About</span>
+    </a>
+    <a *ngIf="(user|async)?.uid" class="menu" routerLink="/fire">
+      <span>Fire</span>
+    </a>
+    <a *ngIf="(user|async)?.uid" class="menu" routerLink="/add-item">
+      <span>Add Items</span>
+    </a>
+    <a *ngIf="(user|async)?.uid" class="menu" routerLink="/chat">
+      <span>Idea Zone</span>
+    </a>
+    <span class="example-spacer"></span>
+    <div *ngIf="!(user|async)?.uid"><button routerLink="/login">Login</button></div>
+    <div *ngIf="!(user|async)?.uid"><button routerLink="/signup">Signup</button></div>
+    <div *ngIf="(user|async)?.uid"><button (click)="logout()">Logout</button></div>
+    
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+        <md-icon class="example-icon">menu</md-icon>
+    </button>      
+</md-toolbar>
+<md-menu #menu="mdMenu">
+    <button md-menu-item>
+      <md-icon>dialpad</md-icon>
+      <span>Redial</span>
+    </button>
+    <button md-menu-item disabled>
+      <md-icon>voicemail</md-icon>
+      <span>Check voicemail</span>
+    </button>
+    <button md-menu-item>
+      <md-icon>notifications_off</md-icon>
+      <span>Disable alerts</span>
+    </button>
+  </md-menu>
+</div>

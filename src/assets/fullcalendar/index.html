@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<link href='fullcalendar.css' rel='stylesheet' />
+<link href='fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='moment.js'></script>
+<script src='jquery.js'></script>
+<script src='fullcalendar.js'></script>
+<script>
+
+    $(document).ready(function() {
+	
+	
+       // var title = prompt('#pname');
+		
+        $('#calendar').fullCalendar({
+		//height: 450,
+		//aspectRatio: 5,
+		//scrollTime: '10:00:00',
+		timezone: '05:30',  
+		contentHeight: 394,
+		minTime: "10:00:00",
+        maxTime: "18:30:00",
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+				
+            },
+            defaultDate: '2017-07-24',
+            selectable: true,
+            selectConstraint: 'businessHours',
+            eventConstraint: 'businessHours',
+            selectHelper: true,
+			//Duration : '14:00:00',
+			  defaultView: 'agendaWeek',
+    events: [
+        {
+		    title: 'Event1',
+            start: '2017-07-24T10:00:00',
+            end: '2017-07-24T16:00:00',
+			url: 'http://google.com/',
+			color: '#A3E4D7'
+            //rendering: 'background'
+        },
+		{
+		    title: 'Event1',
+            start: '2017-07-23T10:00:00',
+            end: '2017-07-23T16:00:00',
+			url: 'http://google.com/',
+			color: '#A3E4D7'
+            //rendering: 'background'
+        },
+		{
+		    title: 'Event anil',
+            start: 'Wed Jul 26 2017 10:30:00 GMT+0000',
+            end: 'Wed Jul 26 2017 18:00:00 GMT+0000',
+			url: 'http://google.com/',
+			color: '#A3E4D7'
+            //rendering: 'background'
+        }
+		
+    ],
+	
+	eventClick: function(event) {
+	
+	
+        if (event.url) {
+            window.open(event.url);
+            return false;
+        }
+    },
+            select: function(start, end) {
+			alert("anil v");
+			//slotLabelFormat: 'H(:mm)';
+			
+			 //var endtime = $('#calendar').fullCalendar.formatDate(end,'h:mm tt');
+            // var starttime = $('#calendar').fullCalendar.formatDate(start,'ddd, MMM d, h:mm tt');
+			//alert(end+"anil"+ start);
+			//alert(endtime+"anil"+ starttime);
+                var title = prompt('Event Title anil:');
+				//var title1 = prompt('Event Title anil:');
+				//var title2= prompt('Event Title anil:');
+				//var title3 = prompt('Event Title anil:');
+				
+				//var title4 = $('input:text');
+				//alert("@@@@@@  "+title);
+				
+				$("#pname").val('anil');
+				$("#starttime").val(start);
+				$("#endtime").val(end);
+				
+                var eventData;
+                if (title) {
+                    eventData = {
+                        title: title,
+                        start: start,
+                        end: end
+						
+                    };
+					alert("eventData"+ eventData);
+                    $('#calendar').fullCalendar('renderEvent', eventData, false); // stick? = true
+                }
+                $('#calendar').fullCalendar('unselect');
+            },
+            businessHours:[ 
+                {
+                    start: '10:00',
+                    end: '18:30',
+                    //dow: [1, 2]
+                }
+				//,
+                //{
+                 //   start: '14:00',
+                  //  end: '16:00',
+                    //dow: [1, 2]
+                //}
+            ],
+			//hiddenDays: [ 1,2,3],
+            allDaySlot: false,
+			//slotDuration : '00:30:00',
+			//snapDuration : '08:00:00',
+			//allDayDefault :true,
+            defaultView: 'agendaWeek',
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+        });
+        
+		//$('#calendar').fullCalendar('option', 'height', 100);
+    });
+
+</script>
+<style>
+
+    body {
+        margin: 40px 10px;
+        padding: 0;
+        font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+        font-size: 14px;
+    }
+
+    #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+</style>
+</head>
+<body>
+
+    <div id='calendar'></div>
+	<input type="text" name="pname" id="pname" value="gulu">
+	
+	
+	<input type="text" name="pname" id="starttime" value="starttime">
+	<input type="text" name="pname" id="endtime" value="endtime">
+
+</body>
+</html>
+

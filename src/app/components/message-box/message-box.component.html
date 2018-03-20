@@ -1,0 +1,9 @@
+    <div class="flex-container">
+      <div class="flex-input">
+        <input mdInput placeholder="Hi {{ placeholder }}, Say something Intresting" [(ngModel)]="message" (keydown)="handleSubmit($event)" >                
+      </div>
+      <div class="flex-button">
+        <button md-raised-button class="company" (click)="sendMessage()"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp; Send</button>                
+      </div>
+    </div>
+

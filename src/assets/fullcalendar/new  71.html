@@ -1,0 +1,288 @@
+<form class="form-horizontal" action="teamtimesheet"   method="post">
+			<div class="col-md-4">
+				<div class="panel panel-primary" id="details"
+					style="max-height: 530px;">
+					<div class="panel-heading ">
+						<h3 class="panel-title">Details</h3>
+					</div>
+					<e:forEach var="listValue" items="${teamInfo}">
+						<div class="panel-body details" id="${listValue.emailId}">
+							<input type="hidden" class="form-control" readonly
+								id="customerId_hidden" name="emailid"
+								value="${listValue.emailId}">
+
+							<div class="row">
+								<div class="col-xs-12" style="margin-bottom: -12px">
+									<div class="row">
+										<div class="col-xs-6">
+											<div class="panel panel-primary">
+												<div class="panel-heading custompanel">
+													<div class="row">
+														<div class="col-xs-12 text-center">
+															<div class="descc">${listValue.revenueGenerated}
+																&euro;</div>
+															<div class="hdngg">Revenue generated</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="panel panel-primary">
+												<div class="panel-heading custompanel">
+													<div class="row">
+														<div class="col-xs-12 text-center">
+															<%-- <div class="descc">${listValue.status}</div>
+                                        <div class="hdngg">Status</div>   --%>
+															<div class="descc1">${listValue.status}</div>
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+
+								<div class="col-xs-12" style="margin-bottom: -12px">
+									<div class="row">
+										<div class="col-xs-6">
+											<div class="panel panel-primary">
+												<div class="panel-heading custompanel">
+													<div class="row">
+														<div class="col-xs-12 text-center">
+															<div class="descc">${listValue.holidayCount}</div>
+															<div class="hdngg">Leaves</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="panel panel-primary">
+												<div class="panel-heading custompanel">
+													<div class="row">
+														<div class="col-xs-12 text-center">
+															<div class="descc">${listValue.expenseOnFirm}
+																${listValue.userCurrency}</div>
+															<div class="hdngg">Approved expenses</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="row">
+										<div class="col-xs-6">
+											<div class="panel panel-primary">
+												<div class="panel-heading custompanel">
+													<div class="row">
+														<div class="col-xs-12 text-center">
+															<div class="descc">50%</div>
+															<div class="hdngg">Utilization</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="panel panel-primary">
+												<div class="panel-heading custompanel">
+													<div class="row">
+														<div class="col-xs-12 text-center">
+															<div class="descc">${listValue.mileageOnFirm}
+																${listValue.userCurrency}</div>
+															<div class="hdngg">Approved Mileage</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+
+							</div>
+
+
+
+							<hr style="margin-bottom: 10px">
+
+							<%-- <p><i class="fa fa-user"></i> &nbsp; <span>${listValue.name}</span> --%>
+							<%--  <div class="row">
+                 <div class="col-sm-6">
+                  <p><i class="fa fa-user"></i>&nbsp; <span>${listValue.name}</span></p> 
+                  </div>
+                  <div class="col-sm-6">
+                  <img src="images/cake.ico" alt="" class="" id="" > &nbsp; 29th oct
+                  </div>
+                  </div>  --%>
+							<div class="row">
+								<div class="col-sm-12">
+									<p>
+										<i class="fa fa-envelope teamdetails"></i>&nbsp; <span
+											style="color: #777777;"><code class="code_team">${listValue.emailId}</code></span>
+									</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<p>
+										<i class="fa fa-mobile teamdetails"></i> &nbsp; <span
+											class="teamdetails"> &nbsp;<code class="code_team">9234561</code></span>
+									</p>
+								</div>
+								<div class="col-sm-6">
+									<img src="images/cake.ico" alt="" class="teamdetails" id="">
+									<span class="teamdetails"><code class="
+">
+											<fmt:formatDate pattern="d MMM" type="date"
+												value="${listValue.dob}" />
+										</code></span>
+								</div>
+							</div>
+							<%-- <div class="col-sm-6">
+                  <p><i class="fa fa-address-book-o"></i> &nbsp; <span>${listValue.emailId}</span></p>
+                  </div> --%>
+
+							<!-----<div class="row">
+                   <div class="col-sm-12">
+                  <p><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;<span> ICICI</span></p>
+                  </div>
+                  </div>--->
+							<div class="row">
+								<div class="col-sm-6">
+
+									<p>
+										<i class="fa fa-address-book-o teamdetails "></i>&nbsp; <span
+											class="teamdetails"><code class="code_team">${listValue.address}</code></span>
+									</p>
+								</div>
+								<div class="col-sm-6">
+									<p>
+										<i class="fa fa-map-marker teamdetails"
+											style="font-size: 20px"></i>&nbsp; <span class="teamdetails"><code
+												class="code_team">${listValue.postCode}</code></span>
+									</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<p>
+										<i class="fa fa-home teamdetails"></i>&nbsp; <span
+											class="teamdetails"><code class="code_team">${listValue.city}</code></span>
+									</p>
+								</div>
+								<div class="col-sm-6">
+									<p>
+										<i class="fa fa-flag teamdetails"></i>&nbsp; <span
+											class="teamdetails"><code class="code_team">${listValue.country}</code></span>
+									</p>
+								</div>
+							</div>
+							<!--  <div class="row">
+                  <div class="col-sm-6">
+                  <p><i class="fa fa-phone teamdetails"></i>&nbsp; <span class="teamdetails"><code class="code_team">&nbsp;&nbsp;&nbsp;Rotterdam&nbsp;&nbsp;&nbsp;&nbsp;</code></span></p>
+                  </div>
+                  <div class="col-sm-6">
+                  <p><i class="fa fa-mobile teamdetails"></i> &nbsp; <span class="teamdetails"> &nbsp;<code class="code_team">Netherland</code></span></p>
+                  </div>
+                  </div> -->
+							<!--   <div class="row">
+                  <div class="col-sm-6">
+                  <p><i class="fa fa-graduation-cap teamdetails"></i> <span><code class="code_team">Text</code></span> </p>
+                  </div>
+                  <div class="col-sm-6">
+                  <p><i class="fa fa-university teamdetails"></i>&nbsp; <span><code class="code_team">Text</code></span></p>
+                  </div>
+                  </div> -->
+							<!--               <!--     <div class="row"> -->
+							<!--   <div class="col-sm-6">
+                  <label>Keywords</label>
+                  </div>
+                  <div class="col-sm-6">
+                  <span>Resume</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="btn btn-primary btn-circle btn-xs" data-toggle="tooltip" data-placement="top" title="View"><i class="fa fa-file-text" aria-hidden="true"></i></span>
+                  </div>
+                  </div> -->
+							<!--      <div class="row"> 
+                   <div class="col-sm-10">
+                  <input type="text"  style="width:100px" name="key" placeholder="keywords">
+                  <label>Keywords: Java</label>
+                   <input type="text" class="form-control" placeholder="Keywords" id="training"   readonly >
+                  </div>
+                  <div class="col-sm-2">
+                  <span>Resume</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="btn btn-primary btn-circle btn-xs" data-toggle="tooltip" data-placement="top" title="View"><i class="fa fa-file-text" aria-hidden="true"></i></span>
+                   <span></span><span class="btn btn-primary btn-circle btn-xs" data-toggle="tooltip" data-placement="bottom" title="View"><i class="fa fa-file-text" aria-hidden="true"></i></span>
+                  </div>
+                  </div> -->
+							<!-- <p><i class="fa fa-home"></i> &nbsp;Street : <span></span></p> 
+                  <p><i class="fa fa-road"></i> &nbsp;City : <span></span></p>
+                  <p><i class="fa fa-institution"></i>&nbsp;Post Code : <span></span></p>-->
+							<!--  <p><i class="fa fa-phone "></i>&nbsp;&nbsp;Office Phone no : <span></span></p> -->
+							<!-- <p><i class="fa fa-phone "></i>&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</p>
+                  <p><i class="fa fa-mobile"></i> &nbsp; <span></span></p> -->
+							<!--  <p><i class="fa fa-graduation-cap"></i> &nbsp; <span></span></p> -->
+
+
+							<%--  <div class="col-sm-12">
+                   <div class="form-group">
+                  
+                   <div class="col-sm-4">
+                 <a class="btn btn-success" href="/mPortal/editprofile?email=${listValue.emailId}">View Profile </a>
+                   </div>
+                  
+                   <e:set var="status"  value="${listValue.status}"/>
+                   <e:if test="${status == 'Contractor'}">   
+                   <div class="col-sm-4">
+                     <a class="btn btn-primary" href="/mPortal/editprofile?email=${listValue.emailId}" data-toggle="modal" data-target="#myModal" >Update Timesheet</a> 
+                    <!--  <a class="btn btn-primary" id="timesheetbtn" data-toggle="modal" data-target="#myModal" >Update Timesheet</a>   -->
+                   <!--  <a class="btn btn-primary" id="timesheetbtn" href="/mPortal/teamtimesheet" >Update Timesheet</a>  -->  
+                  <button class="btn btn-success" type="submit">Timesheet</button>
+                   </div>
+                   </e:if>
+                  
+                 
+                   </div>               
+                  </div> --%>
+							<br /> <br />
+							<div class="col-xs-12" style="margin-top: 20px;">
+								<div class="form-group">
+									<center>
+										<a class="btn btn-success"
+											href="/fokuswork_crm/editprofile?email=${listValue.emailId}">View
+											Profile </a>
+					 				<button class="btn btn-success" type="submit">Timesheet</button>
+
+									<%-- 	<e:set var="status" value="${listValue.status}" />
+										<e:if test="${status == 'Contractor'}">
+
+
+											<a class="btn btn-success" href="/mPortal/editprofile?email=${listValue.emailId}">View Profile </a>  
+											<button class="btn btn-success" type="submit">Timesheet</button>
+
+										</e:if> --%>
+									</center>
+								</div>
+							</div>
+						</div>
+
+
+
+					</e:forEach>
+
+
+
+
+				</div>
+
+
+			</div>
+		</form>

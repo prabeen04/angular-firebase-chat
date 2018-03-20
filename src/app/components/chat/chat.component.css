@@ -1,0 +1,46 @@
+
+/* .feed{
+    background: 
+    linear-gradient(180deg, rgba(43, 160, 150, 0.48), rgba(9, 59, 134, 0.4) ),
+    url('../../../assets/images/mountain.jpg') center center no-repeat ; ;
+    height: 550px;
+    color: #fff;
+    font-size: 1.3em;
+    z-index: 14;
+} */
+
+.users{
+    padding: 3rem;
+    order: 1;
+    flex:1;
+    background: rgba(14, 26, 44, 0.88);
+    height: 80vh;
+    overflow-y: auto; 
+    font-size: 1.1 em;
+    color: #CCC;    
+}
+.chat-wrapper{
+  display: flex;
+  flex-direction: row;
+
+}
+.user-feed{
+    background: 
+    linear-gradient(180deg, rgba(2, 3, 97, 0.8), rgba(4, 99, 91, 0.75) ),
+    url('../../../assets/images/bg.jpg') center center no-repeat ; ;
+    order: 2;
+    flex:5;
+    height: 80vh;
+    overflow-y: auto;
+}
+app-message-box{
+    height: 100px !important;
+}
+.message-box{
+    align-self: flex-end;
+    bottom: 0px;
+    background: rgb(21, 22, 39);
+    z-index: 3;
+    width: 100vw;
+    overflow: hidden;
+}

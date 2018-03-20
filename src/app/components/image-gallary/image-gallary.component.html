@@ -1,0 +1,49 @@
+<br><br><br><br>
+<div class="form-horizontal ">
+  <div class="form-group" style="text-align: center;">
+    <!-- <form> -->
+      <div class="container"><md-form-field class="example-full-width">
+        <input mdInput placeholder="Searh Free Images" [(ngModel)]="query" >
+      </md-form-field>
+        <!-- <input type="" class="form-control" [(ngModel)]="query" placeholder="Searh Images"> -->
+      </div>
+      <button md-raised-button (click)="getPixabayImages(query)" class="company" ><i class="material-icons">&#xE8B6;</i>&nbsp;&nbsp;Search</button>
+      
+     <!-- <br> <button class="btn btn-success"(click)="getPixabayImages(query)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button> -->
+
+    <!-- </form> -->
+  </div>
+</div>
+    <div class="loading" *ngIf="imageProcessing">Loading&#8230;</div>
+<div class="container">
+  <div class="row">
+      <masonry class="brick-container" [useImagesLoaded]="true">
+          
+          <masonry-brick class="brick" *ngFor="let image of images">
+ 
+        <md-card class="example-card">
+            <md-card-header>
+                <!-- <div md-card-avatar class="example-header-image"></div> -->
+
+                <md-card-subtitle>{{image.user}}</md-card-subtitle>
+                <md-card-title> &nbsp;</md-card-title>
+              </md-card-header>
+            <a href="{{image.pageURL}}" target="_blank">    <img md-card-image src="{{image.webformatURL}}" alt="{{image.user}}'s capture"></a> 
+            
+            <md-card-actions>
+                <a href="{{image.pageURL}}" target="_blank">
+                   <button md-button><i class="material-icons">file_download</i></button>
+                </a>  
+              <button md-button><i class="material-icons">share</i></button>
+            </md-card-actions>
+          </md-card>
+          </masonry-brick>
+        </masonry>
+
+
+<!-- 
+      <a href="{{image.pageURL}}" target="_blank">
+         <img src="{{image.webformatURL}}" alt="" class="img-responsive img-thumbnail">
+      </a> -->
+  </div>
+</div>

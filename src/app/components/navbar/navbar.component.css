@@ -1,0 +1,26 @@
+button{
+  color: #F3EBEB;
+  background: transparent;
+  border: none;
+}
+
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .logo{
+    font-size: 1.3em;
+    margin-right: 20px;
+    color: rgb(250, 249, 250);
+    cursor: pointer;
+  }
+  .menu{
+    color: #F3EBEB;
+    background: transparent;
+    margin: 0 5px;
+    font-size: 1.6rem;
+  }

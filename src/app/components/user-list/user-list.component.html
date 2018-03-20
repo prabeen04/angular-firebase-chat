@@ -1,0 +1,22 @@
+    <div class="row">
+      <div class="col-md-12">
+        <ul>
+          <li *ngFor="let user of users">
+           <span class="flex-container">&nbsp;&nbsp;
+             <img src="{{ user.photoURL}}" alt="" class="img img-circle img-responsive">&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#">{{ user.displayName }}</a>&nbsp;&nbsp;
+            <span *ngIf="user.status == 'online'">
+                <i class="fa fa-check-circle-o online pull-right"></i>
+            </span>
+
+          </span>
+          </li>
+        </ul>
+        <div *ngIf="showSpinner" class="facebook-spinner">
+            <div class="spinner-block block-1"></div>
+            <div class="spinner-block block-2"></div>
+            <div class="spinner-block block-3"></div>
+          </div>
+      </div>
+     
+    </div>

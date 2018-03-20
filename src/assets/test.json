@@ -1,0 +1,33 @@
+{
+    "listings" : [ {
+        "bedrooms" : 15,
+        "city" : "San Francisco",
+        "image" : "mansion1.jpg",
+        "owner" : "Bruce Springstien",
+        "path" : "/img/mansion1.jpg",
+        "price" : "10m",
+        "title" : "15 Bedroom Mansion",
+        "type" : "Estate"
+      },
+       {
+        "bedrooms" : 12,
+        "city" : "Miami",
+        "image" : "mansion3.jpg",
+        "owner" : "Taylor Swift",
+        "path" : "/img/mansion3.jpg",
+        "price" : "10.5m",
+        "title" : "Pool Mansion",
+        "type" : "Estate"
+      },
+      {
+        "bedrooms" : 10,
+        "city" : "Newark",
+        "image" : "mansion2.jpg",
+        "owner" : "Tony Soprano",
+        "path" : "/img/mansion2.jpg",
+        "price" : "5.7m",
+        "title" : "10 Bedroom Dreamhouse",
+        "type" : "Estate"
+      }
+    ]
+  }

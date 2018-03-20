@@ -1,0 +1,42 @@
+<div class="chat-component" *ngFor="let message of messages | async">
+  <div class="feed-header">
+    <p>{{ message.username}} </p>
+  </div>
+  <div class="feed-body">
+      <div class="arrow-left"></div>
+    <p class="message">{{ message.message}}</p>  
+    <span class="timestamp">{{ message.timesent}}</span>
+  </div>
+</div>
+<div *ngIf="showSpinner" >
+    <div class="timeline-wrapper">
+        <div class="timeline-item">
+            <div class="animated-background">
+                <div class="background-masker header-top"></div>
+                <div class="background-masker header-left"></div>
+                <div class="background-masker header-right"></div>
+                <div class="background-masker header-bottom"></div>
+                <div class="background-masker subheader-left"></div>
+                <div class="background-masker subheader-right"></div>
+                <div class="background-masker subheader-bottom"></div>
+                <div class="background-masker content-top"></div>
+                <div class="background-masker content-first-end"></div>
+                <div class="background-masker content-second-line"></div>
+                <div class="background-masker content-second-end"></div>
+                <div class="background-masker content-third-line"></div>
+                <div class="background-masker content-third-end"></div>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- <div class="row  ">
+    <div class="opacity">
+      <div class="col-md-12 feed">
+        <div class="single-feed" *ngFor="let message of messages | async">
+          <p>{{ message.username}}: <span>{{ message.timesent}}</span></p>
+         
+            <h3>{{ message.message}}</h3>     
+        </div>
+      </div>
+    </div>
+  </div> -->
